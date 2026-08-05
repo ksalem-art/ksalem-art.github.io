@@ -1,135 +1,1033 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Ksalem Art — original paintings and private commissions.">
-<title>Ksalem Art | Original Paintings</title>
-<style>
-:root{--black:#0b0b0b;--ink:#181818;--gray:#6d6d6d;--line:#d8d8d4;--paper:#f4f4f1;--white:#fff;--max:1280px}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,sans-serif;color:var(--ink);line-height:1.55;background:#fff}body.lock{overflow:hidden}img{display:block;width:100%}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.container{width:min(92%,var(--max));margin:auto}.section{padding:100px 0}.eyebrow{display:inline-block;margin-bottom:14px;color:var(--gray);font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.title{max-width:900px;font:400 clamp(2.7rem,6vw,5.4rem)/.99 Georgia,serif;letter-spacing:-.05em}.copy{max-width:720px;margin-top:20px;color:var(--gray)}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border:1px solid #000;background:#000;color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;cursor:pointer}.btn.light{background:#fff;color:#000;border-color:#fff}.btn.outline{background:transparent;color:#000}.btn:disabled{opacity:.45;cursor:not-allowed}
-header{position:fixed;inset:0 0 auto;z-index:1000;background:rgba(255,255,255,.93);border-bottom:1px solid rgba(0,0,0,.08);backdrop-filter:blur(14px)}nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:400 1.45rem Georgia,serif}.brand small{margin-left:8px;color:var(--gray);font:700 .6rem Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}.navlinks{display:flex;gap:28px;list-style:none;font-size:.72rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.tools{display:flex;gap:8px}.icon{height:44px;padding:0 12px;border:1px solid var(--line);background:#fff;cursor:pointer}.menu{display:none;font-size:1.2rem}
-.hero{min-height:100vh;display:flex;align-items:flex-end;color:#fff;background:linear-gradient(90deg,rgba(0,0,0,.7),rgba(0,0,0,.12)),url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=2200&q=90') center/cover}.hero .content{padding:160px 0 80px}.hero h1{max-width:1000px;font:400 clamp(4rem,10vw,9rem)/.88 Georgia,serif;letter-spacing:-.07em}.hero p{max-width:620px;margin:26px 0 32px;color:rgba(255,255,255,.82)}.actions{display:flex;flex-wrap:wrap;gap:10px}
-.intro{padding:75px 0;background:var(--paper);border-bottom:1px solid var(--line)}.intro p{max-width:1050px;font:400 clamp(2rem,4.5vw,4.2rem)/1.12 Georgia,serif;letter-spacing:-.04em}
-.controls{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:38px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{padding:10px 14px;border:1px solid var(--line);background:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.filter.active{background:#000;color:#fff;border-color:#000}.search{min-width:280px;padding:12px 14px;border:1px solid var(--line)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:32px}.card{border:1px solid var(--line);background:#fff}.image{position:relative;aspect-ratio:4/5;overflow:hidden;background:#eee;cursor:zoom-in}.image img{height:100%;object-fit:cover;transition:.5s}.card:hover .image img{transform:scale(1.025)}.badge{position:absolute;top:13px;left:13px;padding:7px 9px;background:#fff;font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.badge.sold{background:#000;color:#fff}.cardbody{padding:19px}.cardtop{display:flex;justify-content:space-between;gap:15px}.card h3{font:400 1.4rem/1.1 Georgia,serif}.price{font-weight:700;white-space:nowrap}.meta{margin:8px 0 17px;color:var(--gray);font-size:.84rem}.cardactions{display:grid;grid-template-columns:1fr 48px;gap:8px}.view{border:1px solid #000;background:#fff;cursor:pointer}
-.dark{background:#000;color:#fff}.dark .eyebrow,.dark .copy{color:#999}.why{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:48px;background:#333;border:1px solid #333}.why article{min-height:280px;padding:30px;background:#0d0d0d}.why span{display:block;margin-bottom:50px;color:#777;font:400 2.2rem Georgia,serif}.why h3{margin-bottom:10px;font:400 1.4rem Georgia,serif}.why p{color:#999;font-size:.9rem}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.portrait{min-height:680px;background:url('https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1400&q=88') center/cover}.details{margin-top:26px;border-top:1px solid var(--line)}.detail{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.88rem}.detail span{color:var(--gray)}.contact{background:var(--paper)}form{display:grid;gap:15px;padding:32px;background:#fff;box-shadow:0 22px 60px rgba(0,0,0,.12)}.row{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:grid;gap:7px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}input,textarea,select{width:100%;padding:13px;border:1px solid var(--line);background:#fafafa}textarea{min-height:140px;resize:vertical}
-.modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.9)}.modal.open{display:flex}.modalbox{width:min(1100px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.25fr .75fr;background:#fff}.modalimg{min-height:620px;background:#111}.modalimg img{height:100%;object-fit:contain}.modalinfo{padding:34px}.modalinfo h2{font:400 2.3rem/1.05 Georgia,serif}.modalmeta,.modaldesc{color:var(--gray);margin:12px 0 22px}.x{position:fixed;top:18px;right:20px;width:44px;height:44px;border:0;background:#fff;font-size:1.4rem;cursor:pointer}
-.back{position:fixed;inset:0;z-index:1500;background:rgba(0,0,0,.5);opacity:0;visibility:hidden}.back.open{opacity:1;visibility:visible}.drawer{position:fixed;top:0;right:0;z-index:1600;width:min(440px,100%);height:100vh;display:flex;flex-direction:column;background:#fff;transform:translateX(100%);transition:.25s}.drawer.open{transform:none}.drawerhead,.drawerfoot{padding:22px;border-bottom:1px solid var(--line)}.drawerhead{display:flex;justify-content:space-between;align-items:center}.drawerhead h2{font:400 1.7rem Georgia,serif}.cartitems{flex:1;overflow:auto;padding:15px 22px}.empty{text-align:center;color:var(--gray);padding:45px 0}.cartitem{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.cartitem img{width:72px;height:88px;object-fit:cover}.cartitem h4{font:400 1rem Georgia,serif}.cartitem p{color:var(--gray);font-size:.82rem}.remove{border:0;background:none;color:var(--gray);cursor:pointer}.drawerfoot{border-top:1px solid var(--line);border-bottom:0}.total{display:flex;justify-content:space-between;margin-bottom:13px;font-weight:700}.drawerfoot .btn{width:100%}.note{margin-top:10px;color:var(--gray);font-size:.72rem}
-footer{padding:30px 0;background:#000;color:#999}.foot{display:flex;justify-content:space-between;gap:20px}.foot strong{color:#fff;font:400 1.15rem Georgia,serif}
-@media(max-width:950px){.navlinks{position:absolute;top:76px;left:4%;right:4%;display:none;flex-direction:column;padding:22px;background:#fff;border:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}.grid{grid-template-columns:1fr 1fr}.why{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.modalbox{grid-template-columns:1fr}.modalimg{min-height:440px}}
-@media(max-width:650px){.section{padding:76px 0}.brand small{display:none}.hero h1{font-size:clamp(4rem,20vw,6.3rem)}.grid,.why,.row{grid-template-columns:1fr}.search{width:100%;min-width:0}.portrait{min-height:500px}.foot{flex-direction:column}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ksalem Art — original contemporary paintings, available works, and private commissions." />
+  <title>Ksalem Art | Original Contemporary Paintings</title>
+
+  <style>
+    :root {
+      --black: #090909;
+      --ink: #171717;
+      --gray: #6d6d6d;
+      --line: #d8d8d4;
+      --paper: #f4f4f1;
+      --white: #ffffff;
+      --success: #245d39;
+      --danger: #7d1f1f;
+      --max: 1320px;
+      --shadow: 0 24px 70px rgba(0,0,0,.16);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.55;
+    }
+    body.lock { overflow: hidden; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .container { width: min(92%, var(--max)); margin: auto; }
+    .section { padding: 104px 0; }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--gray);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .title {
+      max-width: 930px;
+      font: 400 clamp(2.8rem, 6vw, 5.5rem)/.99 Georgia, "Times New Roman", serif;
+      letter-spacing: -.05em;
+    }
+    .copy {
+      max-width: 720px;
+      margin-top: 20px;
+      color: var(--gray);
+      font-size: 1.02rem;
+    }
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #2b2b2b; }
+    .button.light { background: var(--white); color: var(--black); border-color: var(--white); }
+    .button.outline { background: transparent; color: var(--black); }
+    .button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      background: rgba(255,255,255,.93);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      backdrop-filter: blur(14px);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      font: 400 1.45rem Georgia, "Times New Roman", serif;
+    }
+    .brand small {
+      margin-left: 8px;
+      color: var(--gray);
+      font: 700 .6rem Arial, sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .nav-tools { display: flex; gap: 8px; }
+    .icon-button {
+      min-width: 44px;
+      height: 44px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .menu-button { display: none; font-size: 1.2rem; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.2) 56%, rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=2200&q=90") center/cover;
+    }
+    .hero-content { padding: 160px 0 82px; }
+    .hero h1 {
+      max-width: 1000px;
+      font: 400 clamp(4rem, 10vw, 9rem)/.88 Georgia, "Times New Roman", serif;
+      letter-spacing: -.07em;
+    }
+    .hero p {
+      max-width: 620px;
+      margin: 26px 0 32px;
+      color: rgba(255,255,255,.82);
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .intro {
+      padding: 76px 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+    .intro p {
+      max-width: 1080px;
+      font: 400 clamp(2rem, 4.5vw, 4.2rem)/1.12 Georgia, "Times New Roman", serif;
+      letter-spacing: -.04em;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 38px;
+    }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-button {
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .filter-button.active {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+    .search {
+      min-width: 290px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      outline: none;
+    }
+
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-top: 32px;
+    }
+    .art-card { border: 1px solid var(--line); background: var(--white); }
+    .image-wrap {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #ececea;
+      cursor: zoom-in;
+    }
+    .image-wrap img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .art-card:hover .image-wrap img { transform: scale(1.025); }
+    .badge {
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      padding: 7px 9px;
+      background: var(--white);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .badge.sold { background: var(--black); color: var(--white); }
+    .art-card-body { padding: 19px; }
+    .art-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .art-card h3 {
+      font: 400 1.4rem/1.1 Georgia, "Times New Roman", serif;
+    }
+    .price { font-weight: 700; white-space: nowrap; }
+    .meta { margin: 8px 0 17px; color: var(--gray); font-size: .84rem; }
+    .art-actions { display: grid; grid-template-columns: 1fr 48px; gap: 8px; }
+    .view-button {
+      border: 1px solid var(--black);
+      background: var(--white);
+      font-size: 1rem;
+    }
+
+    .dark { background: var(--black); color: var(--white); }
+    .dark .eyebrow, .dark .copy { color: #999; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 48px;
+      background: #333;
+      border: 1px solid #333;
+    }
+    .why-grid article {
+      min-height: 280px;
+      padding: 30px;
+      background: #0d0d0d;
+    }
+    .why-grid span {
+      display: block;
+      margin-bottom: 50px;
+      color: #777;
+      font: 400 2.2rem Georgia, serif;
+    }
+    .why-grid h3 {
+      margin-bottom: 10px;
+      font: 400 1.4rem Georgia, serif;
+    }
+    .why-grid p { color: #999; font-size: .9rem; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .artist-image {
+      min-height: 680px;
+      background:
+        url("https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1400&q=88")
+        center / cover;
+    }
+    .details {
+      margin-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .88rem;
+    }
+    .detail span { color: var(--gray); }
+
+    .contact { background: var(--paper); }
+    form {
+      display: grid;
+      gap: 15px;
+      padding: 32px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    label {
+      display: grid;
+      gap: 7px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--line);
+      background: #fafafa;
+      outline: none;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+    .form-status {
+      display: none;
+      padding: 12px;
+      font-size: .86rem;
+    }
+    .form-status.success { display: block; background: #edf7f0; color: var(--success); }
+    .form-status.error { display: block; background: #fbefef; color: var(--danger); }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0,0,0,.92);
+    }
+    .modal.open { display: flex; }
+    .modal-box {
+      width: min(1140px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      background: var(--white);
+    }
+    .modal-image {
+      min-height: 650px;
+      overflow: hidden;
+      background: #111;
+      cursor: zoom-in;
+    }
+    .modal-image img {
+      height: 100%;
+      object-fit: contain;
+      transition: transform .25s ease;
+      transform-origin: center;
+    }
+    .modal-image.zoomed {
+      cursor: zoom-out;
+      overflow: auto;
+    }
+    .modal-image.zoomed img { transform: scale(1.8); }
+    .modal-info { padding: 34px; }
+    .modal-info h2 {
+      font: 400 2.3rem/1.05 Georgia, serif;
+    }
+    .modal-meta, .modal-description {
+      color: var(--gray);
+      margin: 12px 0 22px;
+    }
+    .modal-close {
+      position: fixed;
+      top: 18px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: var(--white);
+      font-size: 1.4rem;
+      z-index: 2100;
+    }
+
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1500;
+      background: rgba(0,0,0,.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: .2s;
+    }
+    .backdrop.open { opacity: 1; visibility: visible; }
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1600;
+      width: min(440px, 100%);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      transform: translateX(100%);
+      transition: .25s;
+    }
+    .drawer.open { transform: none; }
+    .drawer-header, .drawer-footer {
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drawer-header h2 { font: 400 1.7rem Georgia, serif; }
+    .cart-items { flex: 1; overflow: auto; padding: 15px 22px; }
+    .empty { text-align: center; color: var(--gray); padding: 45px 0; }
+    .cart-item {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .cart-item img { width: 72px; height: 88px; object-fit: cover; }
+    .cart-item h4 { font: 400 1rem Georgia, serif; }
+    .cart-item p { color: var(--gray); font-size: .82rem; }
+    .remove-item { border: 0; background: none; color: var(--gray); }
+    .drawer-footer { border-top: 1px solid var(--line); border-bottom: 0; }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 13px;
+      font-weight: 700;
+    }
+    .drawer-footer .button { width: 100%; }
+    .note { margin-top: 10px; color: var(--gray); font-size: .72rem; }
+
+    footer { padding: 30px 0; background: var(--black); color: #999; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; }
+    .footer-row strong { color: var(--white); font: 400 1.15rem Georgia, serif; }
+
+    @media (max-width: 950px) {
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 4%;
+        right: 4%;
+        display: none;
+        flex-direction: column;
+        padding: 22px;
+        background: var(--white);
+        border: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .menu-button { display: block; }
+      .art-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .modal-box { grid-template-columns: 1fr; }
+      .modal-image { min-height: 440px; }
+    }
+
+    @media (max-width: 650px) {
+      .section { padding: 76px 0; }
+      .brand small { display: none; }
+      .hero h1 { font-size: clamp(4rem, 20vw, 6.3rem); }
+      .art-grid, .why-grid, .field-row { grid-template-columns: 1fr; }
+      .search { width: 100%; min-width: 0; }
+      .artist-image { min-height: 500px; }
+      .footer-row { flex-direction: column; }
+    }
+  </style>
 </head>
+
 <body>
-<header><nav class="container">
-<a class="brand" href="#home">Ksalem Art <small>Original Works</small></a>
-<ul class="navlinks" id="navlinks"><li><a href="#available">Available</a></li><li><a href="#why">Why Choose Me</a></li><li><a href="#artist">Artist</a></li><li><a href="#contact">Contact</a></li></ul>
-<div class="tools"><button class="icon" id="cartOpen">Cart <span id="count">0</span></button><button class="icon menu" id="menu">☰</button></div>
-</nav></header>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">Ksalem Art <small>Original Works</small></a>
 
-<main>
-<section class="hero" id="home"><div class="container content"><span class="eyebrow">Contemporary Fine Art</span><h1>Paintings with presence.</h1><p>Original works created through layered color, movement, texture, and memory.</p><div class="actions"><a class="btn light" href="#available">View Available Work</a><a class="btn" href="#contact">Request a Commission</a></div></div></section>
-<section class="intro"><div class="container"><p>Each Ksalem painting is a singular object—made to hold attention, transform a space, and reward a closer look.</p></div></section>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#available">Available</a></li>
+        <li><a href="#why">Why Choose Me</a></li>
+        <li><a href="#artist">Artist</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-<section class="section" id="available"><div class="container">
-<span class="eyebrow">Gallery & Sale</span><h2 class="title">Available and selected works.</h2><p class="copy">Filter by availability or collection, search by title, and open any painting for a larger view.</p>
-<div class="controls"><div class="filters" id="filters"></div><input class="search" id="search" placeholder="Search paintings"></div>
-<div class="grid" id="grid"></div>
-</div></section>
+      <div class="nav-tools">
+        <button class="icon-button" id="cartOpen">Cart <span id="cartCount">0</span></button>
+        <button class="icon-button menu-button" id="menuButton">☰</button>
+      </div>
+    </nav>
+  </header>
 
-<section class="section dark" id="why"><div class="container">
-<span class="eyebrow">Why Choose Me</span><h2 class="title">Original artwork with material depth and personal attention.</h2>
-<div class="why">
-<article><span>01</span><h3>One of One</h3><p>Every painting is an original and includes a signed certificate of authenticity.</p></article>
-<article><span>02</span><h3>Collector Guidance</h3><p>Support is available for scale, placement, framing, shipping, and installation.</p></article>
-<article><span>03</span><h3>Archival Materials</h3><p>Professional-grade surfaces, pigments, and protective finishes are used throughout.</p></article>
-<article><span>04</span><h3>Private Commissions</h3><p>Selected commissions are developed collaboratively for specific spaces.</p></article>
-</div></div></section>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <span class="eyebrow">Contemporary Fine Art</span>
+        <h1>Paintings with presence.</h1>
+        <p>Original works created through layered color, movement, texture, and memory.</p>
+        <div class="hero-actions">
+          <a class="button light" href="#available">View Available Work</a>
+          <a class="button" href="#contact">Request a Commission</a>
+        </div>
+      </div>
+    </section>
 
-<section class="section" id="artist"><div class="container split"><div class="portrait"></div><div>
-<span class="eyebrow">The Artist</span><h2 class="title">Ksalem creates paintings that shift with light, distance, and the room around them.</h2>
-<p class="copy">Replace this paragraph with the artist's real biography, process, influences, exhibitions, and approach to making work.</p>
-<div class="details"><div class="detail"><strong>Medium</strong><span>Oil, acrylic, mixed media</span></div><div class="detail"><strong>Focus</strong><span>Original paintings and commissions</span></div><div class="detail"><strong>Availability</strong><span>Collector inquiries worldwide</span></div></div>
-</div></div></section>
+    <section class="intro">
+      <div class="container">
+        <p>Each Ksalem painting is a singular object—made to hold attention, transform a space, and reward a closer look.</p>
+      </div>
+    </section>
 
-<section class="section contact" id="contact"><div class="container split"><div>
-<span class="eyebrow">Contact</span><h2 class="title">Inquire about a painting or commission.</h2><p class="copy">Replace the contact information with the artist's real details.</p>
-<div class="details"><div class="detail"><strong>Email</strong><span>studio@ksalem.com</span></div><div class="detail"><strong>Instagram</strong><span>@ksalemart</span></div><div class="detail"><strong>Studio</strong><span>Visits by appointment</span></div></div>
-</div>
-<form onsubmit="sendInquiry(event)"><div class="row"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label></div><label>Inquiry Type<select name="type"><option>Artwork availability</option><option>Private commission</option><option>Exhibition or press</option><option>General inquiry</option></select></label><label>Message<textarea name="message" required></textarea></label><button class="btn">Send Inquiry</button></form>
-</div></section>
-</main>
+    <section class="section" id="available">
+      <div class="container">
+        <span class="eyebrow">Gallery & Sale</span>
+        <h2 class="title">Available and selected works.</h2>
+        <p class="copy">Filter by availability or collection, search by title, and open any painting for a larger, zoomable view.</p>
 
-<footer><div class="container foot"><strong>Ksalem Art</strong><span>© <span id="year"></span> Ksalem Art. All rights reserved.</span></div></footer>
+        <div class="controls">
+          <div class="filters" id="filters"></div>
+          <input class="search" id="searchInput" type="search" placeholder="Search paintings">
+        </div>
 
-<div class="modal" id="modal"><button class="x" id="modalClose">×</button><div class="modalbox"><div class="modalimg"><img id="modalImage"></div><div class="modalinfo"><span class="eyebrow" id="modalCollection"></span><h2 id="modalTitle"></h2><span class="price" id="modalPrice"></span><p class="modalmeta" id="modalMeta"></p><p class="modaldesc" id="modalDesc"></p><button class="btn" id="modalBuy"></button></div></div></div>
+        <div class="art-grid" id="artGrid"></div>
+      </div>
+    </section>
 
-<div class="back" id="back"></div><aside class="drawer" id="drawer"><div class="drawerhead"><h2>Your Cart</h2><button class="icon" id="cartClose">×</button></div><div class="cartitems" id="cartItems"></div><div class="drawerfoot"><div class="total"><span>Total</span><span id="total">$0</span></div><button class="btn" id="checkout">Checkout</button><p class="note">Add a Stripe or PayPal payment link to each artwork in the editable list below before accepting live payments.</p></div></aside>
+    <section class="section dark" id="why">
+      <div class="container">
+        <span class="eyebrow">Why Choose Me</span>
+        <h2 class="title">Original artwork with material depth and personal attention.</h2>
 
-<script>
-/* ==========================================================
-   EASY EDITING SECTION
-   Change your paintings only in this list.
+        <div class="why-grid">
+          <article><span>01</span><h3>One of One</h3><p>Every painting is an original and includes a signed certificate of authenticity.</p></article>
+          <article><span>02</span><h3>Collector Guidance</h3><p>Support is available for scale, placement, framing, shipping, and installation.</p></article>
+          <article><span>03</span><h3>Archival Materials</h3><p>Professional-grade surfaces, pigments, and protective finishes are used throughout.</p></article>
+          <article><span>04</span><h3>Private Commissions</h3><p>Selected commissions are developed collaboratively for specific spaces.</p></article>
+        </div>
+      </div>
+    </section>
 
-   status: "available" or "sold"
-   image: upload files to an images folder, then use:
-          "images/your-file.jpg"
-   paymentLink: paste that painting's Stripe or PayPal link.
-   ========================================================== */
-const artworks=[
-{id:"inner-current",title:"Inner Current",price:2400,size:"48 × 60 in",medium:"Mixed media on canvas",collection:"Abstract",status:"available",image:"https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=1500&q=90",description:"A layered abstract work exploring rhythm, interruption, and motion.",paymentLink:""},
-{id:"after-the-rain",title:"After the Rain",price:1850,size:"40 × 50 in",medium:"Oil and cold wax",collection:"Atmosphere",status:"available",image:"https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?auto=format&fit=crop&w=1500&q=90",description:"A quiet study of softened structure, weather, and reflected light.",paymentLink:""},
-{id:"second-language",title:"Second Language",price:3200,size:"52 × 72 in",medium:"Oil on linen",collection:"Abstract",status:"available",image:"https://images.unsplash.com/photo-1577083552431-6e5fd01988a5?auto=format&fit=crop&w=1500&q=90",description:"Gesture and color gather into a visual language that resists a single reading.",paymentLink:""},
-{id:"quiet-architecture",title:"Quiet Architecture",price:1450,size:"36 × 48 in",medium:"Acrylic on canvas",collection:"Monochrome",status:"sold",image:"https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1500&q=90",description:"A restrained composition balancing structure, erosion, and silence.",paymentLink:""},
-{id:"holding-pattern",title:"Holding Pattern",price:2100,size:"44 × 54 in",medium:"Mixed media on linen",collection:"Atmosphere",status:"available",image:"https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1500&q=90",description:"Built through repeated veils, erased marks, and shifting spatial cues.",paymentLink:""},
-{id:"soft-boundary",title:"Soft Boundary",price:1650,size:"38 × 48 in",medium:"Oil on canvas",collection:"Monochrome",status:"sold",image:"https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1500&q=90",description:"A study in subtle contrast, edge, and compressed movement.",paymentLink:""}
-];
+    <section class="section" id="artist">
+      <div class="container split">
+        <div class="artist-image" aria-label="Artist studio"></div>
 
-let active="All",cart=JSON.parse(localStorage.getItem("ksalemCartV2")||"[]");
-const $=id=>document.getElementById(id),money=n=>"$"+Number(n).toLocaleString();
+        <div>
+          <span class="eyebrow">The Artist</span>
+          <h2 class="title">Ksalem creates paintings that shift with light, distance, and the room around them.</h2>
+          <p class="copy">Replace this paragraph with the artist's real biography, process, influences, exhibitions, and approach to making work.</p>
 
-function makeFilters(){
- const list=["All","Available","Sold",...new Set(artworks.map(a=>a.collection))];
- $("filters").innerHTML=list.map(x=>`<button class="filter ${x===active?"active":""}" onclick="setFilter('${x}')">${x}</button>`).join("");
-}
-function setFilter(x){active=x;makeFilters();render()}
-function render(){
- const q=$("search").value.toLowerCase().trim();
- const items=artworks.filter(a=>{
-  const find=(a.title+" "+a.collection+" "+a.medium).toLowerCase().includes(q);
-  const match=active==="All"||(active==="Available"&&a.status==="available")||(active==="Sold"&&a.status==="sold")||a.collection===active;
-  return find&&match;
- });
- $("grid").innerHTML=items.length?items.map(a=>`<article class="card"><div class="image" onclick="openModal('${a.id}')"><img src="${a.image}" alt="${a.title}"><span class="badge ${a.status==="sold"?"sold":""}">${a.status}</span></div><div class="cardbody"><div class="cardtop"><h3>${a.title}</h3><span class="price">${a.status==="sold"?"Sold":money(a.price)}</span></div><p class="meta">${a.medium} · ${a.size}</p><div class="cardactions"><button class="btn" ${a.status==="sold"?"disabled":""} onclick="buy('${a.id}')">${a.status==="sold"?"Sold":"Purchase"}</button><button class="view" onclick="openModal('${a.id}')">↗</button></div></div></article>`).join(""):"<p>No paintings match your search.</p>";
-}
-function openModal(id){
- const a=artworks.find(x=>x.id===id);if(!a)return;
- $("modalImage").src=a.image;$("modalImage").alt=a.title;$("modalCollection").textContent=a.collection;$("modalTitle").textContent=a.title;$("modalPrice").textContent=a.status==="sold"?"Sold":money(a.price);$("modalMeta").textContent=a.medium+" · "+a.size;$("modalDesc").textContent=a.description;
- $("modalBuy").textContent=a.status==="sold"?"Sold":"Purchase Artwork";$("modalBuy").disabled=a.status==="sold";$("modalBuy").onclick=()=>buy(a.id);
- $("modal").classList.add("open");document.body.classList.add("lock");
-}
-function closeModal(){$("modal").classList.remove("open");document.body.classList.remove("lock")}
-function buy(id){
- const a=artworks.find(x=>x.id===id);if(!a||a.status==="sold")return;
- if(a.paymentLink){location.href=a.paymentLink;return}
- if(!cart.some(x=>x.id===id))cart.push({id:a.id,title:a.title,price:a.price,image:a.image});
- saveCart();closeModal();openCart();
-}
-function saveCart(){localStorage.setItem("ksalemCartV2",JSON.stringify(cart));renderCart()}
-function renderCart(){
- $("count").textContent=cart.length;
- $("cartItems").innerHTML=cart.length?cart.map(x=>`<div class="cartitem"><img src="${x.image}" alt="${x.title}"><div><h4>${x.title}</h4><p>${money(x.price)}</p></div><button class="remove" onclick="removeItem('${x.id}')">×</button></div>`).join(""):'<p class="empty">Your cart is empty.</p>';
- $("total").textContent=money(cart.reduce((s,x)=>s+x.price,0));
-}
-function removeItem(id){cart=cart.filter(x=>x.id!==id);saveCart()}
-function openCart(){$("drawer").classList.add("open");$("back").classList.add("open");document.body.classList.add("lock")}
-function closeCart(){$("drawer").classList.remove("open");$("back").classList.remove("open");document.body.classList.remove("lock")}
-function sendInquiry(e){e.preventDefault();const f=e.target;location.href="mailto:studio@ksalem.com?subject="+encodeURIComponent("Ksalem Art Inquiry — "+f.type.value)+"&body="+encodeURIComponent("Name: "+f.name.value+"\nEmail: "+f.email.value+"\n\n"+f.message.value)}
-$("search").oninput=render;$("modalClose").onclick=closeModal;$("modal").onclick=e=>{if(e.target===$("modal"))closeModal()};$("cartOpen").onclick=openCart;$("cartClose").onclick=closeCart;$("back").onclick=closeCart;$("checkout").onclick=()=>alert(cart.length?"Add a Stripe or PayPal paymentLink to each painting in the editable artwork list.":"Your cart is empty.");
-$("menu").onclick=()=>$("navlinks").classList.toggle("open");document.querySelectorAll("#navlinks a").forEach(a=>a.onclick=()=>$("navlinks").classList.remove("open"));
-$("year").textContent=new Date().getFullYear();makeFilters();render();renderCart();
-</script>
+          <div class="details">
+            <div class="detail"><strong>Medium</strong><span>Oil, acrylic, mixed media</span></div>
+            <div class="detail"><strong>Focus</strong><span>Original paintings and commissions</span></div>
+            <div class="detail"><strong>Availability</strong><span>Collector inquiries worldwide</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 class="title">Inquire about a painting or commission.</h2>
+          <p class="copy">Messages can be sent directly through the site after you add your free Formspree endpoint in the setup section.</p>
+
+          <div class="details">
+            <div class="detail"><strong>Email</strong><span>studio@ksalem.com</span></div>
+            <div class="detail"><strong>Instagram</strong><span>@ksalemart</span></div>
+            <div class="detail"><strong>Studio</strong><span>Visits by appointment</span></div>
+          </div>
+        </div>
+
+        <form id="contactForm">
+          <div class="field-row">
+            <label>Name<input name="name" required></label>
+            <label>Email<input name="email" type="email" required></label>
+          </div>
+
+          <label>
+            Inquiry Type
+            <select name="inquiry_type">
+              <option>Artwork availability</option>
+              <option>Private commission</option>
+              <option>Exhibition or press</option>
+              <option>General inquiry</option>
+            </select>
+          </label>
+
+          <label>
+            Painting
+            <input name="painting" id="paintingField" placeholder="Optional">
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" required></textarea>
+          </label>
+
+          <input type="hidden" name="_subject" value="New Ksalem Art inquiry">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button class="button" id="submitButton" type="submit">Send Inquiry</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <strong>Ksalem Art</strong>
+      <span>© <span id="year"></span> Ksalem Art. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <div class="modal" id="artModal">
+    <button class="modal-close" id="modalClose">×</button>
+
+    <div class="modal-box">
+      <div class="modal-image" id="modalImageWrap" title="Click to zoom">
+        <img id="modalImage" alt="">
+      </div>
+
+      <div class="modal-info">
+        <span class="eyebrow" id="modalCollection"></span>
+        <h2 id="modalTitle"></h2>
+        <span class="price" id="modalPrice"></span>
+        <p class="modal-meta" id="modalMeta"></p>
+        <p class="modal-description" id="modalDescription"></p>
+        <button class="button" id="modalBuy"></button>
+        <button class="button outline" id="modalInquire" style="margin-top:10px;width:100%">Ask About This Painting</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop" id="cartBackdrop"></div>
+
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h2>Your Cart</h2>
+      <button class="icon-button" id="cartClose">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="drawer-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0</span>
+      </div>
+
+      <button class="button" id="checkoutButton">Checkout</button>
+      <p class="note">Each available painting should have its own secure Stripe or PayPal checkout link in the editable artwork list.</p>
+    </div>
+  </aside>
+
+  <script>
+    /*
+    ============================================================
+    ONE-TIME SETUP
+    ============================================================
+    1. Create a free Formspree form.
+    2. Replace the value below with your endpoint.
+       Example: https://formspree.io/f/abcdwxyz
+    3. Add a Stripe or PayPal checkout link to each painting's
+       paymentLink field in the ARTWORK EDITING SECTION.
+    ============================================================
+    */
+
+    const FORMSPREE_ENDPOINT = "PASTE_YOUR_FORMSPREE_ENDPOINT_HERE";
+
+    /*
+    ============================================================
+    ARTWORK EDITING SECTION
+    ============================================================
+    To add a painting, copy one complete {...} block.
+
+    status:
+      "available" or "sold"
+
+    image:
+      Upload artwork into a GitHub folder named images.
+      Example: "images/my-painting.jpg"
+
+    paymentLink:
+      Paste that painting's Stripe Payment Link or PayPal URL.
+    ============================================================
+    */
+
+    const artworks = [
+      {
+        id: "inner-current",
+        title: "Inner Current",
+        price: 2400,
+        size: "48 × 60 in",
+        medium: "Mixed media on canvas",
+        collection: "Abstract",
+        status: "available",
+        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=1600&q=90",
+        description: "A layered abstract work exploring rhythm, interruption, and motion.",
+        paymentLink: ""
+      },
+      {
+        id: "after-the-rain",
+        title: "After the Rain",
+        price: 1850,
+        size: "40 × 50 in",
+        medium: "Oil and cold wax",
+        collection: "Atmosphere",
+        status: "available",
+        image: "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?auto=format&fit=crop&w=1600&q=90",
+        description: "A quiet study of softened structure, weather, and reflected light.",
+        paymentLink: ""
+      },
+      {
+        id: "second-language",
+        title: "Second Language",
+        price: 3200,
+        size: "52 × 72 in",
+        medium: "Oil on linen",
+        collection: "Abstract",
+        status: "available",
+        image: "https://images.unsplash.com/photo-1577083552431-6e5fd01988a5?auto=format&fit=crop&w=1600&q=90",
+        description: "Gesture and color gather into a visual language that resists a single reading.",
+        paymentLink: ""
+      },
+      {
+        id: "quiet-architecture",
+        title: "Quiet Architecture",
+        price: 1450,
+        size: "36 × 48 in",
+        medium: "Acrylic on canvas",
+        collection: "Monochrome",
+        status: "sold",
+        image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1600&q=90",
+        description: "A restrained composition balancing structure, erosion, and silence.",
+        paymentLink: ""
+      },
+      {
+        id: "holding-pattern",
+        title: "Holding Pattern",
+        price: 2100,
+        size: "44 × 54 in",
+        medium: "Mixed media on linen",
+        collection: "Atmosphere",
+        status: "available",
+        image: "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1600&q=90",
+        description: "Built through repeated veils, erased marks, and shifting spatial cues.",
+        paymentLink: ""
+      },
+      {
+        id: "soft-boundary",
+        title: "Soft Boundary",
+        price: 1650,
+        size: "38 × 48 in",
+        medium: "Oil on canvas",
+        collection: "Monochrome",
+        status: "sold",
+        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1600&q=90",
+        description: "A study in subtle contrast, edge, and compressed movement.",
+        paymentLink: ""
+      }
+    ];
+
+    let activeFilter = "All";
+    let cart = JSON.parse(localStorage.getItem("ksalemCartV3") || "[]");
+    let currentArtwork = null;
+
+    const byId = id => document.getElementById(id);
+    const money = value => "$" + Number(value).toLocaleString();
+
+    function buildFilters() {
+      const collections = [...new Set(artworks.map(art => art.collection))];
+      const options = ["All", "Available", "Sold", ...collections];
+
+      byId("filters").innerHTML = options.map(option => `
+        <button class="filter-button ${option === activeFilter ? "active" : ""}"
+          onclick="setFilter('${option}')">
+          ${option}
+        </button>
+      `).join("");
+    }
+
+    function setFilter(filter) {
+      activeFilter = filter;
+      buildFilters();
+      renderGallery();
+    }
+
+    function renderGallery() {
+      const query = byId("searchInput").value.toLowerCase().trim();
+
+      const items = artworks.filter(art => {
+        const searchable = `${art.title} ${art.collection} ${art.medium}`.toLowerCase();
+        const matchesSearch = searchable.includes(query);
+
+        const matchesFilter =
+          activeFilter === "All" ||
+          (activeFilter === "Available" && art.status === "available") ||
+          (activeFilter === "Sold" && art.status === "sold") ||
+          art.collection === activeFilter;
+
+        return matchesSearch && matchesFilter;
+      });
+
+      byId("artGrid").innerHTML = items.length
+        ? items.map(art => `
+          <article class="art-card">
+            <div class="image-wrap" onclick="openArtwork('${art.id}')">
+              <img src="${art.image}" alt="${art.title}">
+              <span class="badge ${art.status === "sold" ? "sold" : ""}">
+                ${art.status === "sold" ? "Sold" : "Available"}
+              </span>
+            </div>
+
+            <div class="art-card-body">
+              <div class="art-card-top">
+                <h3>${art.title}</h3>
+                <span class="price">${art.status === "sold" ? "Sold" : money(art.price)}</span>
+              </div>
+
+              <p class="meta">${art.medium} · ${art.size}</p>
+
+              <div class="art-actions">
+                <button class="button"
+                  ${art.status === "sold" ? "disabled" : ""}
+                  onclick="purchaseArtwork('${art.id}')">
+                  ${art.status === "sold" ? "Sold" : "Purchase"}
+                </button>
+
+                <button class="view-button" onclick="openArtwork('${art.id}')" aria-label="View ${art.title}">
+                  ↗
+                </button>
+              </div>
+            </div>
+          </article>
+        `).join("")
+        : "<p>No paintings match your search.</p>";
+    }
+
+    function openArtwork(id) {
+      const art = artworks.find(item => item.id === id);
+      if (!art) return;
+
+      currentArtwork = art;
+
+      byId("modalImage").src = art.image;
+      byId("modalImage").alt = art.title;
+      byId("modalCollection").textContent = art.collection;
+      byId("modalTitle").textContent = art.title;
+      byId("modalPrice").textContent = art.status === "sold" ? "Sold" : money(art.price);
+      byId("modalMeta").textContent = `${art.medium} · ${art.size}`;
+      byId("modalDescription").textContent = art.description;
+
+      const buyButton = byId("modalBuy");
+      buyButton.textContent = art.status === "sold" ? "Sold" : "Purchase Artwork";
+      buyButton.disabled = art.status === "sold";
+      buyButton.onclick = () => purchaseArtwork(art.id);
+
+      byId("artModal").classList.add("open");
+      document.body.classList.add("lock");
+    }
+
+    function closeArtwork() {
+      byId("artModal").classList.remove("open");
+      byId("modalImageWrap").classList.remove("zoomed");
+      document.body.classList.remove("lock");
+    }
+
+    function inquireAboutCurrentArtwork() {
+      if (!currentArtwork) return;
+
+      byId("paintingField").value = currentArtwork.title;
+      closeArtwork();
+      document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => byId("paintingField").focus(), 500);
+    }
+
+    function purchaseArtwork(id) {
+      const art = artworks.find(item => item.id === id);
+      if (!art || art.status === "sold") return;
+
+      if (art.paymentLink) {
+        window.location.href = art.paymentLink;
+        return;
+      }
+
+      if (!cart.some(item => item.id === id)) {
+        cart.push({
+          id: art.id,
+          title: art.title,
+          price: art.price,
+          image: art.image
+        });
+      }
+
+      saveCart();
+      closeArtwork();
+      openCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem("ksalemCartV3", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function renderCart() {
+      byId("cartCount").textContent = cart.length;
+
+      byId("cartItems").innerHTML = cart.length
+        ? cart.map(item => `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.title}">
+            <div>
+              <h4>${item.title}</h4>
+              <p>${money(item.price)}</p>
+            </div>
+            <button class="remove-item" onclick="removeCartItem('${item.id}')">×</button>
+          </div>
+        `).join("")
+        : '<p class="empty">Your cart is empty.</p>';
+
+      byId("cartTotal").textContent =
+        money(cart.reduce((total, item) => total + item.price, 0));
+    }
+
+    function removeCartItem(id) {
+      cart = cart.filter(item => item.id !== id);
+      saveCart();
+    }
+
+    function openCart() {
+      byId("cartDrawer").classList.add("open");
+      byId("cartBackdrop").classList.add("open");
+      document.body.classList.add("lock");
+    }
+
+    function closeCart() {
+      byId("cartDrawer").classList.remove("open");
+      byId("cartBackdrop").classList.remove("open");
+      document.body.classList.remove("lock");
+    }
+
+    async function submitContactForm(event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const status = byId("formStatus");
+      const button = byId("submitButton");
+
+      if (!FORMSPREE_ENDPOINT.startsWith("https://formspree.io/f/")) {
+        status.className = "form-status error";
+        status.textContent = "The form is not connected yet. Add your Formspree endpoint in the setup section of index.html.";
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Sending…";
+      status.className = "form-status";
+      status.textContent = "";
+
+      try {
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Form submission failed.");
+
+        form.reset();
+        status.className = "form-status success";
+        status.textContent = "Thank you. Your inquiry has been sent successfully.";
+      } catch (error) {
+        status.className = "form-status error";
+        status.textContent = "The message could not be sent. Please try again or email studio@ksalem.com.";
+      } finally {
+        button.disabled = false;
+        button.textContent = "Send Inquiry";
+      }
+    }
+
+    byId("contactForm").addEventListener("submit", submitContactForm);
+    byId("searchInput").addEventListener("input", renderGallery);
+
+    byId("modalClose").onclick = closeArtwork;
+    byId("artModal").onclick = event => {
+      if (event.target === byId("artModal")) closeArtwork();
+    };
+
+    byId("modalImageWrap").onclick = () => {
+      byId("modalImageWrap").classList.toggle("zoomed");
+    };
+
+    byId("modalInquire").onclick = inquireAboutCurrentArtwork;
+
+    byId("cartOpen").onclick = openCart;
+    byId("cartClose").onclick = closeCart;
+    byId("cartBackdrop").onclick = closeCart;
+
+    byId("checkoutButton").onclick = () => {
+      if (!cart.length) {
+        alert("Your cart is empty.");
+        return;
+      }
+
+      const linkedItems = cart
+        .map(item => artworks.find(art => art.id === item.id))
+        .filter(Boolean);
+
+      if (linkedItems.length === 1 && linkedItems[0].paymentLink) {
+        window.location.href = linkedItems[0].paymentLink;
+        return;
+      }
+
+      alert("Add a secure Stripe or PayPal paymentLink to each painting in the editable artwork list.");
+    };
+
+    byId("menuButton").onclick = () => {
+      byId("navLinks").classList.toggle("open");
+    };
+
+    document.querySelectorAll("#navLinks a").forEach(link => {
+      link.onclick = () => byId("navLinks").classList.remove("open");
+    });
+
+    byId("year").textContent = new Date().getFullYear();
+
+    buildFilters();
+    renderGallery();
+    renderCart();
+  </script>
 </body>
 </html>
